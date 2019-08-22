@@ -33,7 +33,7 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
   $scope.editorToggled = false;
   $scope.tableToggled = false;
   $scope.viewOnly = false;
-  $scope.reportMode = false
+  $scope.reportMode = false;
   $scope.showSetting = false;
   $scope.showRevisionsComparator = false;
   $scope.collaborativeMode = false;
@@ -531,19 +531,19 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     }
   };
 
-  const isViewOnly = function () {
-    return (!$scope.isOwner && !$scope.isWriter)
-  }
+  const isViewOnly = function() {
+    return (!$scope.isOwner && !$scope.isWriter);
+  };
 
-  const isReportMode = function () {
-    return ($scope.note.config.looknfeel === 'report')
-  }
+  const isReportMode = function() {
+    return ($scope.note.config.looknfeel === 'report');
+  };
 
   const initializeLookAndFeel = function() {
     if (!$scope.note.config.looknfeel) {
       $scope.note.config.looknfeel = 'default';
     } else {
-      $scope.reportMode = isReportMode()
+      $scope.reportMode = isReportMode();
     }
 
     if ($scope.note.paragraphs && $scope.note.paragraphs[0]) {
@@ -1199,15 +1199,15 @@ function NotebookCtrl($scope, $route, $routeParams, $location, $rootScope,
     }
   };
 
-  $scope.setRelationships = function () {
+  $scope.setRelationships = function() {
     $scope.isOwner = !($scope.permissions.owners.length > 0 &&
-      _.indexOf($scope.permissions.owners, $rootScope.ticket.principal) < 0)
+      _.indexOf($scope.permissions.owners, $rootScope.ticket.principal) < 0);
 
     $scope.isWriter = !($scope.permissions.writers.length > 0 &&
-      _.indexOf($scope.permissions.writers, $rootScope.ticket.principal) < 0)
+      _.indexOf($scope.permissions.writers, $rootScope.ticket.principal) < 0);
 
-    $scope.viewOnly = isViewOnly()
-  }
+    $scope.viewOnly = isViewOnly();
+  };
 
   $scope.toggleNotePersonalizedMode = function() {
     let personalizedMode = $scope.note.config.personalizedMode;
