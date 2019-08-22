@@ -76,8 +76,8 @@ function HomeCtrl($scope, noteListFactory, websocketMsgSrv, $rootScope, arrayOrd
       $rootScope.$broadcast('setLookAndFeel', 'home');
 
       // make it read only
-      vm.viewOnly = true
-      vm.reportMode = false
+      vm.viewOnly = true;
+      vm.reportMode = false;
 
       vm.notebookHome = true;
       vm.staticHome = false;
